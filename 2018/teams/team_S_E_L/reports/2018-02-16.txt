@@ -1,0 +1,3 @@
+- reverse engineering de Calypso à partir de la classe principale (déroulement du démarrage de Calypso)
+- modifications légères de l'interface (ajout de panels dans la partie haute de l'interface) (visuel mais pas utilisables)
+- recherche dans la mailing list d'anciennes demandes d'aide concernant Calypso
