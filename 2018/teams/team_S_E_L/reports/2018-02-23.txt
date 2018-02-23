@@ -1,0 +1,52 @@
+- constuction de la trace d'appel au lancement pour isoler les parties de code reponsable de 
+	- créer l'environnement de travail 
+	- charger les plugins
+	- lancer la création de la fenêtre
+	(voir en bas de ce document)
+- recherches sur le fonctionnement de la fenêtre :
+	- la partie haute de la fenêtre est le NavigationPanel et contient des panels représentant l'arborescence
+	- la partie basse est principalement composée d'un TabMorph qui contient le code source à afficher, ainsi que d'une toolbar.
+
+
+// trace du lancement de Calypso (seules les parties pertinantes sont gardées)
+
+ClyFullBrowser.Open
+	ClyFullBrowser.openOn: [ClyNavigationEnvironment currentImage
+		ClyNavigationEnvironment.defaultOver: ClySystemEnvironment currentImage
+			ClySystemEnvironment.currentImage
+				ClySystemEnvironment.defaultOver] /* creation environnement E */
+		
+		ClyFullBrowser.on: 
+			ClyFullBrowser.new 
+				ClyFullBrowser.initialize
+					super.initialize
+					ClyFullBrowser.extent:initialExtent:
+					ClyFullBrowser.changeProportionalLayout
+					ClyBrowser.initializeToolsPanel			/* partie basse de l'écran */
+					ClyBrowser.initializeNavigationPanel		/* partie haute de l'écran*/
+						ClyFullBrowser.initializeNavigationView /* création de panels */
+					ClyFullBrowser.addPaneSplitters
+			ClyFullBrowser.navigationEnvironment: E
+			ClyFullBrowser.setUpAvailablePlugins				/* chargement des plugins */
+				ClyBrowserPlugin.allSubclasses: 
+					OrderedCollection.select:thenDo:
+
+		ClyFullBrowser.open
+			ClyFullBrowser.ensureInitialState
+			ClyFullBrowser.openInWindow
+				ClyFullBrowser.openInWindowLabeled string
+					ClyFullBrowser.openInWindowLabeled:inWorld WorldMorph /* Construction de la fenetre */
+						SystemWindow.bounds
+						SystemWindow.addMorph
+						SystemWindow.updatePaneColors
+						SystemWindow.extent
+						WorldMorph.addMorph
+						SystemWindow.activate
+						SystemWindow.announceOpened
+			SystemWindow.model:
+				SystemWindow.paneColorTrackModel
+				SystemWindow.minimumExtent
+				MultistateButtonMorph.labelGraphic
+				MultistateButtonMorph.heigh
+			ClyFullBrowser.updateWindowTitle
+
