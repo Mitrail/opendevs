@@ -1,0 +1,6 @@
+- Premières améliorations au projet :
+    - ajout d'un champ de recherche dans la colonne "methodes" du navigateur
+      (cela nous est utile pour naviger le code plus facilement et aidera probablement d'autres développeurs)
+    - Recherche d'un fontionnalité dans Nautilus pour la rendre disponible dans Calypso (lancement d'une recherche dynamique sans selectionner le champs de recherche).
+    - Constat de problèmes de Nautilus qui ont été supprimés dans Calypso (ouverture d'une nouvelle fenetre identique lors d'un double-clic sur une méthode).
+    

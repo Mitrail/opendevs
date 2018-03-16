@@ -1,0 +1,5 @@
+- Présentation du Reverse Engineering
+- Lors de la pause pédagogique :
+  - prise de contact avec Denis Kudriashov (créateur de Calypso),sur Discord qui a fournit des slides de présentations effectuées lors d'une conférence Esug.
+  - Ces slides ont mit en avant le fonctionnement des queries et commander
+  - préparation de la présentation
