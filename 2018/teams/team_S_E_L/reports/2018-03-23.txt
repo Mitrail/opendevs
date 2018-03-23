@@ -1,0 +1,16 @@
+- Recherche d'amélioration d'une fonctionnalité demandée dans une issue:
+  les flèches du clavier permettent de se déplacer entre les Pane et d'accéder à la zone d'édition de code, mais ne permet pas de quitter cette zone.
+  Le fonctionnement des raccourcis est spécifié dans ClyBrowser.switchFocusToNextPane et SwitchFocusToPreviousPane. Cependant, il aurait fallu modifier le code de la zone d'édition qui dépend de pharo et non de Calypso.
+  Nous avons constaté qu'un Spotter permet déjà de quitter la zone d'édition. Nous l'avons donc testé et avons signalé sur l'issue concernée qu'elle peut être fermée.
+
+- Recherche de correction d'une issue à donner des titres pour le MethodBrowser :
+  Il a été nécessaire d'apporter des modifications à l'initialisation du tableau afin de se rapprocher des exemples de Pharo.
+  Cependant ces modifications ont des conséquences sur toutes les listes affichée :
+    - Le titre de la colonne qu'on a ajouté en premier est affichée partout dans les listes de Pharo et pas seulement dans le MethodBrowser.
+    - Nous avons ajouté un bouton sur ce titre qui pourra être utilisé pour trier le contenu des listes par ordre alphabétique, mais nous n'avons pas pu finaliser cette amélioration.
+
+- Pendant ce projet nous avons :
+  - Contacté l'auteur du projet afin d'avoir des explications sur son fonctionnement, cela nous a permit d'obtenir les slides de présentations.
+  - résolu un problème que nous avons rencontré (avec le filtre en bas de chaque Pane)
+  - Signalé qu'une issue pouvait être marquée comme résolue : https://github.com/dionisiydk/Calypso/issues/63
+  - Tenté de résoudre une issue nécessitant de modifier le code : https://github.com/dionisiydk/Calypso/issues/43
